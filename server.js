@@ -25,6 +25,15 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+app.get("/api/whoami", function (req, res) {
+  const  headers = req.rawHeaders
+  res.json({
+    ipaddress: headers[1],
+    language: headers[29],
+    software: headers[15]
+  });
+});
+
 
 
 // listen for requests :)
